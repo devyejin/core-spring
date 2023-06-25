@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="memberRepository" class="hello.core.member.MemoryMemberRepository"></bean>
+        <!-- memberRepository 는 생성자에 매개변수 없으니까 <constructor-arg> 필요없음-->
+
+    <bean id="discountPolicy" class="hello.core.discount.FixDiscountPolicy"></bean>
+
+    <bean id="memberService" class="hello.core.member.MemberServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository" /> <!-- 생성자 매개변수, 오 이제 이해가  -->
+    </bean>
+
+    <bean id="orderService" class="hello.core.order.OrderServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+        <constructor-arg name="discountPolicy" ref="discountPolicy"/>
+    </bean>
+
+</beans>
