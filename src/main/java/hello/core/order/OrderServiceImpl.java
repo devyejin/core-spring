@@ -13,6 +13,11 @@ public class OrderServiceImpl implements OrderService {
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     //할인 정책 변경
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); //클라이언트(요청) OrderServiceImpl 단에서 변경발생 -> OCP원칙 위반!
+
+    //임시 외부 노출용
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
     private final DiscountPolicy discountPolicy;
 
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {

@@ -8,6 +8,11 @@ public class MemberServiceImpl implements MemberService{
     //이제 클라이언트(객체)가 다른 객체(역할)을 부여하는게 아니라 AppConfig가 함
     private final MemberRepository memberRepository; // 역할에만 의존
 
+    //임시로 외부 노출
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
     public MemberServiceImpl(MemberRepository memberRepository) { //AppConfig에서 memberRepository 구현체를 주입해줄거야
         this.memberRepository = memberRepository;
     }
