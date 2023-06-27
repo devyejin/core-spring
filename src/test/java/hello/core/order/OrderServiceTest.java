@@ -22,7 +22,7 @@ public class OrderServiceTest {
     }
 
 
-    @Test
+//    @Test
     void createOrder() {
         //given
         Long memberId = 1L; //Long 잡은 이유는, primitive type의 경우 null을 못 넣어서

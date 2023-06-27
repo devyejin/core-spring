@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("service")
 public class MemberServiceImpl implements MemberService{
 
     //구현체에 의존한다는 문제점이 존재함 ( 역할과 구현 둘 다 의존 -> DIP 위반)
@@ -13,6 +17,7 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository;
     }
 
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) { //AppConfig에서 memberRepository 구현체를 주입해줄거야
         this.memberRepository = memberRepository;
     }
