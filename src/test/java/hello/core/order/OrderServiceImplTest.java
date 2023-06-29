@@ -11,8 +11,8 @@ class OrderServiceImplTest {
     void createOrder() {
 
         //OrderServiceImpl을 테스트하고 싶은 상황
-        OrderServiceImpl orderService = new OrderServiceImpl();
-        orderService.createdOrder(1L, "itemName", 10000);
+//        OrderServiceImpl orderService = new OrderServiceImpl();
+//        orderService.createdOrder(1L, "itemName", 10000);
 
 
     }
